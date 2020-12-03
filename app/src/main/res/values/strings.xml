@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Book Status</string>
+    <string-array name="bookstype">
+        <item>Fiction</item>
+        <item>Non-fiction</item>
+    </string-array>
+</resources>

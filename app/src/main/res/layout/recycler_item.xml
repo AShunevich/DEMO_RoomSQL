@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.ashunevich.booktracker.BookItem"/>
+        <variable
+            name="itemBook"
+            type="BookItem" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/bookName"
+        android:text="@{itemBook.bookName}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Core Java Volume I – Fundamentals" />
+
+    <TextView
+        android:id="@+id/bookAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@{itemBook.bookAuthor}"
+        app:layout_constraintEnd_toEndOf="@+id/bookName"
+        app:layout_constraintStart_toStartOf="@+id/bookName"
+        app:layout_constraintTop_toBottomOf="@+id/bookName"
+        tools:text="Cay S. Horstmann " />
+
+    <Button
+        android:id="@+id/editInfo"
+        android:layout_width="25dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/ic_mode_edit_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bookProgress"
+        app:layout_constraintEnd_toStartOf="@+id/trashBook"
+        app:layout_constraintTop_toTopOf="@+id/bookProgress" />
+
+    <Button
+        android:id="@+id/trashBook"
+        android:layout_width="25dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/ic_delete_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bookProgress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bookProgress" />
+
+    <TextView
+        android:id="@+id/bookType"
+        android:text="@{itemBook.bookType}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookAuthor"
+        tools:text="non-fiction" />
+
+    <TextView
+        android:id="@+id/bookProgress"
+        android:text="@{itemBook.bookProgress}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bookType"
+        app:layout_constraintStart_toEndOf="@+id/bookType"
+        app:layout_constraintTop_toTopOf="@+id/bookType"
+        tools:text=" 4 of 279" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
